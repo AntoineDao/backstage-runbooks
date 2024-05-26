@@ -13,13 +13,6 @@ describe('RunbookEntityV1alpha1Validator', () => {
       },
       spec: {
         owner: 'me',
-        componentSelector: {
-          name: 'test-component',
-          namespace: 'test-namespace',
-          labels: {
-            key: 'value',
-          },
-        },
         steps: [
           {
             name: 'step1',

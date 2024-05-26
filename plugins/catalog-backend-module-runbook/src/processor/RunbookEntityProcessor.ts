@@ -12,7 +12,6 @@ import {
   getCompoundEntityRef,
   RELATION_OWNED_BY,
   RELATION_OWNER_OF,
-  ResourceEntity,
 } from '@backstage/catalog-model';
 import { LocationSpec } from '@backstage/plugin-catalog-common';
 import {
