@@ -6,7 +6,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "bash scripts/version-plugins.sh ${nextRelease.version} && yarn backstage-cli repo build --all",
+        "prepareCmd": "bash scripts/version-plugins.sh ${nextRelease.version} && yarn tsc:full && yarn backstage-cli repo build --all",
         "publishCmd": "bash scripts/publish-plugins.sh ${nextRelease.version}"
       }
     ]
