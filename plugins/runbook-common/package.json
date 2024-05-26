@@ -1,7 +1,7 @@
 {
   "name": "@antoinedao/backstage-plugin-runbook-common",
   "description": "Common functionalities for the runbook plugin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "license": "Apache-2.0",
@@ -20,9 +20,7 @@
     "build": "backstage-cli package build",
     "lint": "backstage-cli package lint",
     "test": "backstage-cli package test",
-    "clean": "backstage-cli package clean",
-    "prepack": "backstage-cli package prepack",
-    "postpack": "backstage-cli package postpack"
+    "clean": "backstage-cli package clean"
   },
   "devDependencies": {
     "@backstage/cli": "^0.26.5"
@@ -33,6 +31,5 @@
   "dependencies": {
     "@backstage/catalog-model": "^1.5.0",
     "@antoinedao/backstage-plugin-runbook-common": "^0.1.0"
-  },
-  "@antoinedao/backstage-plugin-runbook-common": "1.1.1.1"
+  }
 }
