@@ -1,4 +1,4 @@
-# runbook
+# Backstage Plugin Runbook
 
 Welcome to the runbook plugin!
 
@@ -6,7 +6,8 @@ _This plugin was created through the Backstage CLI_
 
 ## Getting started
 
-Your plugin has been added to the example app in this repository, meaning you'll be able to access it by running `yarn start` in the root directory, and then navigating to [/runbook](http://localhost:3000/runbook).
+Refer to the README.md in the root directory of [antoinedao/backstage-runbooks](https://github.com/AntoineDao/backstage-runbooks) for more information.
+## Local Development
 
 You can also serve the plugin in isolation by running `yarn start` in the plugin directory.
 This method of serving the plugin provides quicker iteration speed and a faster startup and hot reloads.
