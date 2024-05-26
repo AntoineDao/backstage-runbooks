@@ -18,6 +18,9 @@ spec:
   owner: guests
   system: examples
   providesApis: [example-grpc-api]
+  usesRunbooks: 
+  - example-runbook
+  - restart-kubernetes-pod
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
 apiVersion: backstage.io/v1alpha1
@@ -39,3 +42,47 @@ spec:
     message ExampleMessage {
       string example = 1;
     };
+---
+apiVersion: backstage.io/v1alpha1
+kind: Runbook
+metadata:
+  name: example-runbook
+  title: Example Runbook
+  description: This is an example runbook
+  labels:
+    category: Operations
+  tags:
+    - example
+    - runbook
+spec:
+  owner: sre-team
+  steps:
+    - name: Step 1
+      description: This is the first step
+      command: echo "Hello, World!"
+    - name: Step 2
+      description: This is the second step
+      command: echo "Goodbye, World!"
+---
+apiVersion: backstage.io/v1alpha1
+kind: Runbook
+metadata:
+  name: restart-kubernetes-pod
+  title: Restart Kubernetes Pod
+  description: This runbook describes the steps to restart a Kubernetes pod in production.
+  labels:
+    category: Operations
+  tags:
+    - kubernetes
+spec:
+  owner: sre-team
+  steps:
+    - name: Get the name of the pod
+      description: This step retrieves the name of the pod that needs to be restarted.
+      command: kubectl get pods -n production
+    - name: Delete the pod
+      description: This step deletes the pod, causing Kubernetes to create a new one to replace it.
+      command: kubectl delete pod <pod-name> -n production
+    - name: Verify the new pod is running
+      description: This step verifies that the new pod has been created and is running.
+      command: kubectl get pods -n production

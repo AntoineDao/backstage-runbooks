@@ -26,6 +26,9 @@ backend.add(import('@backstage/plugin-catalog-backend/alpha'));
 backend.add(
   import('@backstage/plugin-catalog-backend-module-scaffolder-entity-model'),
 );
+backend.add(
+  import('@antoinedao/backstage-plugin-catalog-backend-module-runbook'),
+);
 
 // permission plugin
 backend.add(import('@backstage/plugin-permission-backend/alpha'));
