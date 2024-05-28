@@ -1,6 +1,10 @@
 NEW_VERSION=$1
 PACKAGES=("@antoinedao/backstage-plugin-runbook-common" "@antoinedao/backstage-plugin-runbook" "@antoinedao/backstage-plugin-catalog-backend-module-runbook")  # Add your package names here
 
+yarn tsc:full
+
+yarn backstage-cli repo build --all
+
 for file in $(find ./plugins -maxdepth 2 -name package.json); do
     echo $file
 
@@ -17,7 +21,3 @@ for file in $(find ./plugins -maxdepth 2 -name package.json); do
     jq '.types = .publishConfig.types' $file > temp.json && mv temp.json $file
 
 done
-
-yarn tsc:full
-
-yarn backstage-cli repo build --all
