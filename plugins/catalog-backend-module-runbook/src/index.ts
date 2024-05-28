@@ -6,3 +6,4 @@
  */
 
 export { catalogModuleRunbook as default } from './module';
+export { RunbookEntityProcessor } from './processor';
